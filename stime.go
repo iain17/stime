@@ -8,7 +8,7 @@ import (
 var response = ntpResponse()
 
 func ntpResponse() ntp.Response {
-	response, err := ntp.Query("0.beevik-ntp.pool.ntp.org")
+	response, err := ntp.Query("time.google.com")
 	if err != nil {
 		return ntp.Response{}
 	}
