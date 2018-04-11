@@ -30,3 +30,8 @@ func ntpResponse() ntp.Response {
 func Now() time.Time {
 	return time.Now().Add(response.ClockOffset).UTC()
 }
+
+//Bit off topic for this package. But since we're doing a external request here to a NTP server we can also report back if the network is slow.
+func IsBadNetwork() bool {
+	return response.RTT > 1 * time.Second
+}
